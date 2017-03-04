@@ -2,9 +2,19 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-event-list',
-  templateUrl: './event-list.component.html',
+  // templateUrl: './event-list.component.html',
+  template: `
+    <div>
+      <div>
+        {{currentCounter}}
+      </div>
+      <app-event-thumbnail (buttonClicked)="handleEventClicked($event)" [event]="event1" ></app-event-thumbnail>
+    </div>
+  `,
   styleUrls: ['./event-list.component.css']
 })
+
+
 export class EventListComponent implements OnInit {
 
   constructor() { }
@@ -12,7 +22,7 @@ export class EventListComponent implements OnInit {
   ngOnInit() {
   }
 
-  event = {
+  event1 = {
     id: 1,
     name: "Jackson concert",
     imageUrl: "https://goo.gl/images/FDOFdB",
@@ -21,7 +31,12 @@ export class EventListComponent implements OnInit {
       city: "Moscow",
       country: "Russia"
     }
+  }
 
+  currentCounter
+
+  handleEventClicked(event) {
+    this.currentCounter = event
   }
 
 }

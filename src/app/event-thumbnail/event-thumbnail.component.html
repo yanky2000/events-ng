@@ -1,0 +1,20 @@
+<div>
+  event-list works! some event here...
+
+  <div class="event-box">
+    <button type="button" class="btn btn-primary">
+      Counter
+      <span class="badge">
+        {{counter}}
+      </span>
+
+    </button>
+    <p>Name: {{event.name}}</p>
+    <p>Location: {{event.location.address}}
+      <span>&nbsp;</span>
+      <span>{{event.location.city}}, {{event.location.country}} </span>
+    </p>
+    <p>{{event.imageUrl}}</p>
+  </div>
+  <button type="button" class="btn btn-primary" (click)="handleClickMe()">Primary</button>
+</div>
