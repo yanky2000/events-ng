@@ -2,13 +2,14 @@
   event-list works! some event here...
 
   <div class="event-box">
+
     <button type="button" class="btn btn-primary">
       Counter
       <span class="badge">
-        {{counter}}
+        {{counter1}}
       </span>
-
     </button>
+
     <p>Name: {{event.name}}</p>
     <p>Location: {{event.location.address}}
       <span>&nbsp;</span>
@@ -16,5 +17,9 @@
     </p>
     <p>{{event.imageUrl}}</p>
   </div>
-  <button type="button" class="btn btn-primary" (click)="handleClickMe()">Primary</button>
+  <hr>
+  
+  <h2>Use of @Output</h2>
+
+  <button type="button" class="btn btn-primary" (click)="handleClickMe()">Show current counter</button>
 </div>

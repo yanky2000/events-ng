@@ -10,7 +10,7 @@ export class EventThumbnailComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    // setInterval(() => {this.counter++}, 1000)
+    setInterval(() => {this.counter++}, 1000)
   }
 
   counter = 0
@@ -21,5 +21,9 @@ export class EventThumbnailComponent implements OnInit {
   handleClickMe() {
     // console.log('clicked!')
     this.buttonClicked.emit(this.counter)
+  }
+
+  showTimer() {
+    console.log(this.counter)
   }
 }

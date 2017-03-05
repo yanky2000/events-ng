@@ -8,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
       <div>
         {{currentCounter}}
       </div>
-      <app-event-thumbnail (buttonClicked)="handleEventClicked($event)" [event]="event1" ></app-event-thumbnail>
-    </div>
+      <app-event-thumbnail #thumbnail (buttonClicked)="handleEventClicked($event)" [event]="event1" ></app-event-thumbnail>
+
+     ` <button type="button" class="btn btn-default" (click)="thumbnail.showTimer()">Show counter in console</button>
+
+    </div>  
   `,
   styleUrls: ['./event-list.component.css']
 })
