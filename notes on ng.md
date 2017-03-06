@@ -11,3 +11,7 @@ Interpolation{{}}, Prop binding[] and Expression
 - *ngIf *ngSwitch
 - [hidden]
 - [ngStyle], [ngClass] ="expression" or function, returning some values
+
+
+Services
+Inject 3rd party libraries as services
