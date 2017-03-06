@@ -5,3 +5,9 @@ Data transmission:
     In parent comp add newEventEmitterObj = handler func, which takes in event obj
 
 Add event handler to child and event receiving handler to parent. 
+
+Interpolation{{}}, Prop binding[] and Expression
+- *ngFor
+- *ngIf *ngSwitch
+- [hidden]
+- [ngStyle], [ngClass] ="expression" or function, returning some values

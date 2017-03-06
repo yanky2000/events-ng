@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EventServiceService } from '../event-service.service';
 
 @Component({
   selector: 'app-event-list',
@@ -8,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
       <div>
         {{currentCounter}}
       </div>
-      <app-event-thumbnail #thumbnail (buttonClicked)="handleEventClicked($event)" [event]="event1" ></app-event-thumbnail>
-
-     ` <button type="button" class="btn btn-default" (click)="thumbnail.showTimer()">Show counter in console</button>
+      <span *ngFor="let event of events">
+        <app-event-thumbnail #thumbnail (buttonClicked)="handleEventClicked($event)" [event]="event" ></app-event-thumbnail>
+      </span>
+      <button type="button" class="btn btn-default" (click)="thumbnail.showTimer()">Show counter in console</button>
 
     </div>  
   `,
@@ -19,21 +21,12 @@ import { Component, OnInit } from '@angular/core';
 
 
 export class EventListComponent implements OnInit {
-
-  constructor() { }
+  events: any
+  constructor(private eventService: EventServiceService) { }
 
   ngOnInit() {
-  }
-
-  event1 = {
-    id: 1,
-    name: "Jackson concert",
-    imageUrl: "https://goo.gl/images/FDOFdB",
-    location: {
-      address: "Tverskaya 12",
-      city: "Moscow",
-      country: "Russia"
-    }
+    this.events = this.eventService.getEvents()
+    console.log(this.events)
   }
 
   currentCounter
