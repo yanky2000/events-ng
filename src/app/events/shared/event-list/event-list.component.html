@@ -1,0 +1,10 @@
+<div class="events-list">
+  <span *ngFor="let event of events">
+    <app-event-thumbnail #thumbnail (click)="eventToastr(event.name)" (buttonClicked)="handleEventClicked($event)" [event]="event" ></app-event-thumbnail>
+  </span>
+  <!--Testing data transfer-->
+  <!--<div>
+    {{currentCounter}}
+  </div>-->
+  <!--<button type="button" class="btn btn-default" (click)="thumbnail.showTimer()">Show counter in console</button>-->
+</div>

@@ -1,0 +1,26 @@
+<div>
+  <!--event-list works! some event here...-->
+
+  <div class="event-card" [routerLink]="['/events',event.id]">
+<!--
+    <button type="button" class="btn btn-primary">
+      Counter
+      <span class="badge">
+        {{counter1}}
+      </span>
+    </button>-->
+
+    <h3>{{event.name}}</h3>
+    <img class="img-responsive" [src]="event.imageUrl">
+    <p>Date: {{event.date}}</p>
+    <p>Location: {{event.location.address}} 
+      <span>&nbsp;</span>
+      <span>{{event.location.city}}, {{event.location.country}} </span>
+    </p>
+  </div>
+
+
+  <!--Testing data transfer between parent & child components-->
+  <!--<h2>Checking counter</h2>
+  <button type="button" class="btn btn-primary" (click)="handleClickMe()">Show current counter</button>-->
+</div>
