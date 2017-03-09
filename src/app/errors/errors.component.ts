@@ -7,8 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styles: [`
     h1 {
       font-size: 42px;
-      color: blue;
-      margin: 50%
+      text-align: center;
+      // color: blue;
+      // margin: 50%
     }
   `],
 })
