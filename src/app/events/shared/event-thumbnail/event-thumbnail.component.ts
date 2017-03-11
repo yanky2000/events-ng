@@ -10,16 +10,16 @@ export class EventThumbnailComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    setInterval(() => {this.counter++}, 1000)
+    // setInterval(() => {this.counter++}, 1000)
   }
 
   counter = 0
   
-  @Input() event
+  @Input() event // Gets event variable from params in parent html tag.
+  
+  // Code for testing transmitting data(counter) to parent component
   @Output() buttonClicked = new EventEmitter ()
-
   handleClickMe() {
-    // console.log('clicked!')
     this.buttonClicked.emit(this.counter)
   }
 

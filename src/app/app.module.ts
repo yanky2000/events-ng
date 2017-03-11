@@ -34,7 +34,21 @@ import { Error404 } from './errors/errors.component';
     RouterModule.forRoot(appRoutes)
   ],
 
-  providers: [EventService, ToastrService, EventRouteActivatorService],
+  providers: [
+    EventService, 
+    ToastrService, 
+    EventRouteActivatorService,
+    {provide: 'checkDirtyState', useValue: checkDirtyState}
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+//should move it in separate file
+function checkDirtyState(component:CreateEventComponent){
+    if(component.isDirty)
+      return window.confirm('The data is not saved. Are you sure you want to quit?')
+    return true
+
+}

@@ -16,20 +16,23 @@ import { ToastrService } from '../../../common/toastr.service';
 
 export class EventListComponent implements OnInit {
   events: any
-  constructor(private eventService: EventService, private toastr: ToastrService) { }
+  constructor(
+    private eventService: EventService,
+    private toastr: ToastrService) {
+  }
 
   ngOnInit() {
     this.events = this.eventService.getEvents()
   }
 
+// Code for testing data transmitting from child to parent comp
   currentCounter
-
   handleEventClicked(event) {
     this.currentCounter = event
   }
 
   eventToastr(name) {
-     this.toastr.success(name) 
+    this.toastr.success(name)
   }
 
 }
