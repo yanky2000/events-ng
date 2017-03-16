@@ -16,7 +16,7 @@ export class CreateEventComponent implements OnInit {
   }
 
   saveEvent(formData) {
-
+    console.log(formData)
   }
 
   cancel() {

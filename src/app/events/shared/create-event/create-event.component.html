@@ -1,7 +1,7 @@
 <div>
   <h1>Create New Event</h1>
   <br>
-  <form #createEvent="ngForm" (ngSubmit)=createEvent(createEvent.value)>
+  <form #createEvent="ngForm" (ngSubmit)="saveEvent(createEvent.value)">
     <div class="form-group">
       <label for="">ID: </label>
       <input #id (ngModel)="id" type="text">
@@ -26,9 +26,9 @@
     </div>
     <!--id: 1, name: "Jackson concert!!!!", imageUrl: "../assets/images/musical-event.jpeg", date: "2017-03-07T09:05:42.618Z", location:
     { address: "Tverskaya 12", city: "Moscow", country: "Russia" },-->
+    <button type="submit" class="btn btn-primary">Create</button>
+    <button type="button" class="btn btn-default" (click)="cancel()">Cancel</button>
   </form>
 
 
-  <button class="btn btn-primary">Create</button>
-  <button class="btn btn-default" (click)="cancel()">Cancel</button>
 </div>
