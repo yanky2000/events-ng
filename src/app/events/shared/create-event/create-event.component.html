@@ -1,8 +1,34 @@
 <div>
   <h1>Create New Event</h1>
   <br>
-  <h3>Create Event form goes here</h3>
-  
+  <form #createEvent="ngForm" (ngSubmit)=createEvent(createEvent.value)>
+    <div class="form-group">
+      <label for="">ID: </label>
+      <input #id (ngModel)="id" type="text">
+    </div>
+    <div class="form-group">
+      <label for="">Name: </label>
+      <input #id (ngModel)="name" type="text">
+    </div>
+    <div class="form-group">
+      <label for="">Date: </label>
+      <input #id (ngModel)="date" type="text">
+    </div>
+    <div ngModelGroup="location">
+      <div class="form-group">
+        <label for="">Address: </label>
+        <input #id (ngModel)="address" type="text">
+      </div>
+      <div class="form-group">
+        <label for="">City: </label>
+        <input #id (ngModel)="address" type="text">
+      </div>
+    </div>
+    <!--id: 1, name: "Jackson concert!!!!", imageUrl: "../assets/images/musical-event.jpeg", date: "2017-03-07T09:05:42.618Z", location:
+    { address: "Tverskaya 12", city: "Moscow", country: "Russia" },-->
+  </form>
+
+
   <button class="btn btn-primary">Create</button>
   <button class="btn btn-default" (click)="cancel()">Cancel</button>
 </div>

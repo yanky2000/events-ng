@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { EventListComponent } from './events/shared/event-list/event-list.component';
 import { EventThumbnailComponent } from './events/shared/event-thumbnail/event-thumbnail.component';
 import { EventService } from './events/shared/event-service.service';
+import { EventsResolverService } from './events/shared/events-resolver.service';
 import { ToastrService } from './common/toastr.service';
 import { EventDetailsComponent } from './events/event-details/event-details.component';
 import { EventRouteActivatorService } from './events/event-details/event-route-activator.service';
@@ -15,6 +16,7 @@ import { appRoutes } from './routes';
 import { NavComponent } from './nav/nav.component';
 import { CreateEventComponent } from './events/shared/create-event/create-event.component';
 import { Error404 } from './errors/errors.component';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +26,7 @@ import { Error404 } from './errors/errors.component';
     EventDetailsComponent,
     NavComponent,
     CreateEventComponent,
-    Error404
+    Error404,
   ],
 
   imports: [
@@ -35,20 +37,19 @@ import { Error404 } from './errors/errors.component';
   ],
 
   providers: [
-    EventService, 
-    ToastrService, 
+    EventService,
+    ToastrService,
     EventRouteActivatorService,
-    {provide: 'checkDirtyState', useValue: checkDirtyState}
-    ],
+    EventsResolverService,
+    { provide: 'checkDirtyState', useValue: checkDirtyState }
+  ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
 
-
-//should move it in separate file
-function checkDirtyState(component:CreateEventComponent){
-    if(component.isDirty)
-      return window.confirm('The data is not saved. Are you sure you want to quit?')
-    return true
-
+function checkDirtyState(component: CreateEventComponent) {
+  if (component.isDirty)
+    return window.confirm('The data is not saved. Are you sure you want to quit?')
+  return true
 }
